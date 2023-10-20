@@ -5,7 +5,8 @@ plugins {
 
 android {
     val mainActivity = "com.example.dynamic_app_icon.MainActivity"
-    val mainActivityAlias = "com.example.dynamic_app_icon.MainActivityAlias"
+    val mainActivityAlias0 = "com.example.dynamic_app_icon.MainActivityAliasZero"
+    val mainActivityAlias1 = "com.example.dynamic_app_icon.MainActivityAliasOne"
 
     namespace = "com.example.dynamic_app_icon"
     compileSdk = 34
@@ -24,11 +25,13 @@ android {
 
         manifestPlaceholders.apply {
             set("main_activity", mainActivity)
-            set("main_activity_alias", mainActivityAlias)
+            set("main_activity_alias_zero", mainActivityAlias0)
+            set("main_activity_alias_one", mainActivityAlias1)
         }
 
         buildConfigField("String", "main_activity", "\"${mainActivity}\"")
-        buildConfigField("String", "main_activity_alias", "\"${mainActivityAlias}\"")
+        buildConfigField("String", "main_activity_alias_zero", "\"${mainActivityAlias0}\"")
+        buildConfigField("String", "main_activity_alias_one", "\"${mainActivityAlias1}\"")
     }
 
     buildTypes {
@@ -40,16 +43,17 @@ android {
             )
 
             buildConfigField("String", "main_activity", "\"${mainActivity}\"")
-            buildConfigField("String", "main_activity_alias", "\"${mainActivityAlias}\"")
+            buildConfigField("String", "main_activity_alias_zero", "\"${mainActivityAlias0}\"")
+            buildConfigField("String", "main_activity_alias_one", "\"${mainActivityAlias1}\"")
         }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
+
+    kotlinOptions.jvmTarget = "1.8"
+
     buildFeatures {
         compose = true
         buildConfig = true
@@ -74,6 +78,8 @@ dependencies {
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
+    implementation("androidx.compose.material:material-icons-extended")
+
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")

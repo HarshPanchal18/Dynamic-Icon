@@ -19,7 +19,6 @@
             android:theme="@style/Theme.DynamicAppIcon">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -27,7 +26,7 @@
         <activity-alias
             android:icon="@drawable/baseline_60fps"
             android:roundIcon="@drawable/baseline_60fps"
-            android:name="${main_activity_alias}"
+            android:name="${main_activity_alias_zero}"
             android:targetActivity=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -35,6 +34,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity-alias>
+
+        <activity-alias
+            android:icon="@drawable/baseline_cloud_circle_24"
+            android:roundIcon="@drawable/baseline_cloud_circle_24"
+            android:name="${main_activity_alias_one}"
+            android:targetActivity=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
     </application>
 
 </manifest>
